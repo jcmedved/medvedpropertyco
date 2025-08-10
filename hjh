@@ -1,0 +1,336 @@
+export default function Site() {
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      {/* Top Announcement Bar */}
+      <div className="w-full bg-emerald-600 text-white text-center text-sm py-2 px-3">
+        Serving Orillia ↔ Brampton • Fast, friendly quotes • Seasonal docks & pools
+      </div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="#home" className="font-bold text-xl tracking-tight">Medved Property Co</a>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#services" className="hover:text-emerald-700">Services</a>
+            <a href="#gallery" className="hover:text-emerald-700">Gallery</a>
+            <a href="#about" className="hover:text-emerald-700">About</a>
+            <a href="#faqs" className="hover:text-emerald-700">FAQs</a>
+            <a href="#contact" className="hover:text-emerald-700">Contact</a>
+          </nav>
+          <div className="flex items-center gap-3">
+            <a href="#quote" className="hidden sm:inline-flex px-4 py-2 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm">Get a Quote</a>
+            <a href="tel:YOUR_PHONE_NUMBER" className="px-3 py-2 rounded-2xl border hover:bg-gray-50">Call</a>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              Exterior Cleaning, Decks, Docks & Pools — Done Right.
+            </h1>
+            <p className="mt-4 text-lg text-gray-700">
+              We help homeowners and cottages keep their properties looking sharp — from soft/pressure washing and deck refinishing to lake weed removal and seasonal dock install/removal. We also handle pool openings, closings, and maintenance.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#quote" className="px-5 py-3 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 shadow">Request a Quote</a>
+              <a href="#services" className="px-5 py-3 rounded-2xl border hover:bg-gray-50">Explore Services</a>
+            </div>
+            <div className="mt-4 text-sm text-gray-600">Serving Orillia, Lake Couchiching & Simcoe County down to Brampton and the GTA.</div>
+          </div>
+          <div className="relative">
+            <div className="aspect-video rounded-3xl bg-gray-100 shadow-inner flex items-center justify-center text-gray-500">
+              {/* Replace with your hero image/video */}
+              <span className="text-sm">Add a hero image or short video clip of a recent job</span>
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow p-4 hidden md:block">
+              <div className="text-sm font-semibold">Same‑week availability</div>
+              <div className="text-xs text-gray-600">Free estimates • Fully insured</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-6 border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div className="rounded-xl border p-4 text-center">Fully Insured</div>
+          <div className="rounded-xl border p-4 text-center">Commercial‑grade Equipment</div>
+          <div className="rounded-xl border p-4 text-center">Eco‑conscious Options</div>
+          <div className="rounded-xl border p-4 text-center">Clear Up‑Front Pricing</div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold">Services</h2>
+          <p className="mt-2 text-gray-600">Simple, seasonal, and tailored to your property.</p>
+
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Exterior Cleaning */}
+            <ServiceCard title="Exterior Cleaning" bullets={["Soft & pressure washing","House wash, siding, soffits, gutters","Driveways, walkways, patios","Commercial storefronts"]} cta="#quote"/>
+
+            {/* Deck Refinishing */}
+            <ServiceCard title="Deck Refinishing" bullets={["Wash, sand, stain/paint","Board repair & screws","Railings & stairs","Seasonal touch‑ups"]} cta="#quote"/>
+
+            {/* Grounds Maintenance */}
+            <ServiceCard title="Grounds Maintenance" bullets={["Bed clean‑ups & mulch","Sod installs & repairs","Light shrub/hedge trimming","Seasonal yard prep"]} cta="#quote"/>
+
+            {/* Lake Weed Removal */}
+            <ServiceCard title="Lake Weed Removal" bullets={["Manual & mechanical removal","Swim area clearing","Eco‑friendly disposal","Dock/lift access maintained"]} cta="#quote"/>
+
+            {/* Dock Install/Removal */}
+            <ServiceCard title="Dock Install / Removal (Seasonal)" bullets={["Install, removal & leveling","Railways & boat lifts","On‑water safety focused","Spring & fall scheduling"]} cta="#quote"/>
+
+            {/* Pool Services */}
+            <ServiceCard title="Pool Opening / Closing & Maintenance" bullets={["Openings & winterizing","Weekly service & chemistry","Equipment (filters, heaters, chlorinators)","Green‑to‑clean rescues"]} cta="#quote"/>
+          </div>
+
+          {/* Service Area */}
+          <div className="mt-10 rounded-2xl border bg-white p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <div className="font-semibold">Service Area</div>
+              <div className="text-sm text-gray-600">Orillia • Lake Couchiching • Simcoe County • Innisfil • Barrie • All the way down to Brampton & nearby GTA</div>
+            </div>
+            <a href="#quote" className="px-4 py-2 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700">Check my address</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold">Project Gallery</h2>
+              <p className="mt-2 text-gray-600">Photos & short clips from recent jobs. Swap the placeholders with your own images/videos.</p>
+            </div>
+            <a href="#contact" className="px-4 py-2 rounded-2xl border hover:bg-gray-50">Send us your footage</a>
+          </div>
+
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Replace the blocks below with <img src="..."/> or <video controls src="..."/> */}
+            <div className="aspect-video rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Dock install timelapse</div>
+            <div className="aspect-[4/5] rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Before/after siding wash</div>
+            <div className="aspect-video rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Deck refinish: sand → stain</div>
+            <div className="aspect-square rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Lake weed removal results</div>
+            <div className="aspect-[4/3] rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Pool opening day</div>
+            <div className="aspect-video rounded-xl bg-gray-100 flex items-center justify-center text-sm text-gray-500">Pressure wash driveway</div>
+          </div>
+
+          {/* Social proof */}
+          <div className="mt-10 grid md:grid-cols-3 gap-4">
+            <Testimonial name="Jennifer R." text="Fast response, clear quote, and the deck looks brand new. Booked them again for fall dock removal."/>
+            <Testimonial name="Gursimran S." text="They handled our sod repair and seasonal clean‑up like pros. Honest pricing & great communication."/>
+            <Testimonial name="Cottage Client" text="Lake weeds were out by the weekend — kids back in the water. Highly recommend."/>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold">About Medved Property Co</h2>
+            <p className="mt-3 text-gray-700">
+              We’re a local, owner‑operated crew focused on quality, safety, and clear communication. From recreation centres to residential cottages, we bring commercial‑grade standards to every job.
+            </p>
+            <ul className="mt-4 space-y-2 text-gray-700 list-disc list-inside">
+              <li>Fully insured, WSIB compliant</li>
+              <li>Written quotes & no‑surprise billing</li>
+              <li>Workmanship guarantee: we’ll make it right</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border bg-white p-6">
+            <h3 className="font-semibold">What to expect</h3>
+            <ol className="mt-2 space-y-2 text-sm text-gray-700 list-decimal list-inside">
+              <li>Quick call or text to confirm your needs & address.</li>
+              <li>Site visit (or photos/video) for an accurate quote.</li>
+              <li>Clear scheduling window and on‑site walkthrough.</li>
+              <li>Clean, safe work — we treat your property like our own.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section id="faqs" className="py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold">FAQs</h2>
+          <div className="mt-6 divide-y">
+            <Faq q="Do you soft wash or pressure wash?" a="Both — we choose the safest, most effective method for the surface (vinyl, stone, wood, etc.)."/>
+            <Faq q="When do you install/remove docks?" a="Typical windows are April–June for installs and Sept–Nov for removals, weather permitting."/>
+            <Faq q="Can you service my pool weekly?" a="Yes. We offer openings/closings and maintenance plans, including chemistry and equipment."/>
+            <Faq q="Are you insured?" a="Yes — fully insured, and we provide COI on request."/>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Form */}
+      <section id="quote" className="py-16 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold">Request a Quote</h2>
+          <p className="mt-2 text-gray-600">Tell us what you need and where you are. We’ll get back to you ASAP.</p>
+
+          <form className="mt-6 grid grid-cols-1 gap-4 rounded-2xl border bg-white p-6 shadow-sm" onSubmit={(e)=>{e.preventDefault(); const data=new FormData(e.currentTarget); const subject = encodeURIComponent(`Quote request — ${data.get('name')}`); const body = encodeURIComponent(Array.from(data.entries()).map(([k,v])=>`${k}: ${v}`).join('\n')); window.location.href=`mailto:YOUR_EMAIL@EXAMPLE.COM?subject=${subject}&body=${body}`;}}>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Input name="name" label="Name" required/>
+              <Input name="phone" label="Phone" required/>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Input name="email" type="email" label="Email" required/>
+              <Input name="address" label="Service Address or City" required/>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Select name="service" label="Service">
+                <option>Exterior Cleaning</option>
+                <option>Deck Refinishing</option>
+                <option>Grounds Maintenance</option>
+                <option>Lake Weed Removal</option>
+                <option>Dock Install/Removal</option>
+                <option>Pool Opening/Closing</option>
+                <option>Pool Maintenance</option>
+                <option>Other</option>
+              </Select>
+              <Input name="timeline" label="Timeline (e.g., next 2 weeks)"/>
+            </div>
+            <Textarea name="details" label="Details" placeholder="Tell us about the job (size, materials, photos link, deadlines)…"/>
+            <div className="flex items-center justify-between gap-3">
+              <label className="text-sm text-gray-600">By submitting, you agree to be contacted about your request.</label>
+              <button type="submit" className="px-5 py-3 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700">Send</button>
+            </div>
+          </form>
+
+          <div className="mt-3 text-xs text-gray-500">Tip: Replace <code>YOUR_EMAIL@EXAMPLE.COM</code> and <code>YOUR_PHONE_NUMBER</code> at the top with your real contact details. If you use Formspree or a CRM form endpoint later, switch the form's submit handler.</div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold">Contact</h2>
+            <ul className="mt-4 text-gray-700 space-y-2 text-sm">
+              <li><span className="font-semibold">Phone:</span> <a className="text-emerald-700 hover:underline" href="tel:YOUR_PHONE_NUMBER">YOUR_PHONE_NUMBER</a></li>
+              <li><span className="font-semibold">Email:</span> <a className="text-emerald-700 hover:underline" href="mailto:YOUR_EMAIL@EXAMPLE.COM">YOUR_EMAIL@EXAMPLE.COM</a></li>
+              <li><span className="font-semibold">Hours:</span> Mon–Sat, 8am–7pm</li>
+            </ul>
+            <div className="mt-6 flex gap-3">
+              <a href="#quote" className="px-5 py-3 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700">Get a Quote</a>
+              <a href="#gallery" className="px-5 py-3 rounded-2xl border hover:bg-gray-50">See our work</a>
+            </div>
+          </div>
+          <div className="rounded-2xl border bg-gray-50 p-6">
+            <h3 className="font-semibold">Add Videos & Photos</h3>
+            <p className="mt-2 text-sm text-gray-700">Replace the gray gallery blocks with your own media. Use any of the following:</p>
+            <ul className="mt-2 text-sm text-gray-700 list-disc list-inside space-y-1">
+              <li>Local files: <code>&lt;img src="/images/dock1.jpg" /&gt;</code> or <code>&lt;video controls src="/videos/opening.mp4" /&gt;</code></li>
+              <li>Hosted links: YouTube/Vimeo <code>&lt;iframe … /&gt;</code> or direct MP4s</li>
+              <li>Before/After: place two images inside the same card</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>© {new Date().getFullYear()} Medved Property Co. All rights reserved.</div>
+          <div className="text-gray-600">Proudly serving Orillia to Brampton • Fully insured</div>
+        </div>
+      </footer>
+
+      {/* Sticky CTA bar on mobile */}
+      <div className="fixed bottom-4 inset-x-0 px-4 md:hidden">
+        <div className="mx-auto max-w-md bg-white border shadow-lg rounded-2xl p-3 flex items-center justify-between">
+          <a href="#quote" className="px-4 py-2 rounded-xl bg-emerald-600 text-white">Free Quote</a>
+          <a href="tel:YOUR_PHONE_NUMBER" className="px-4 py-2 rounded-xl border">Call</a>
+          <a href="sms:YOUR_PHONE_NUMBER" className="px-4 py-2 rounded-xl border">Text</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------------- Components ---------------------- */
+function ServiceCard({ title, bullets, cta }) {
+  return (
+    <div className="rounded-2xl bg-white border p-6 flex flex-col">
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <ul className="mt-3 text-sm text-gray-700 space-y-1 list-disc list-inside">
+        {bullets.map((b, i) => <li key={i}>{b}</li>)}
+      </ul>
+      <a href={cta} className="mt-4 inline-flex w-max px-4 py-2 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700">Get Quote</a>
+    </div>
+  );
+}
+
+function Testimonial({ name, text }) {
+  return (
+    <div className="rounded-2xl border p-5 bg-white">
+      <div className="text-sm text-gray-700">“{text}”</div>
+      <div className="mt-3 text-xs font-semibold">— {name}</div>
+    </div>
+  );
+}
+
+function Input({ label, name, type = 'text', required }) {
+  return (
+    <label className="block">
+      <span className="text-sm font-medium">{label}{required && <span className="text-rose-600"> *</span>}</span>
+      <input name={name} type={type} required={required} className="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+    </label>
+  );
+}
+
+function Textarea({ label, name, placeholder }) {
+  return (
+    <label className="block">
+      <span className="text-sm font-medium">{label}</span>
+      <textarea name={name} placeholder={placeholder} rows={5} className="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-600" />
+    </label>
+  );
+}
+
+function Select({ label, name, children }) {
+  return (
+    <label className="block">
+      <span className="text-sm font-medium">{label}</span>
+      <select name={name} className="mt-1 w-full rounded-xl border px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">{children}</select>
+    </label>
+  );
+}
+
+// NEW: Define the missing Faq component to fix "Faq is not defined" error
+function Faq({ q, a }) {
+  return (
+    <div className="py-4">
+      <div className="text-lg font-semibold">{q}</div>
+      <div className="mt-2 text-gray-600">{a}</div>
+    </div>
+  );
+}
+
+/* ---------------------- Developer Sanity Tests ---------------------- */
+(function runDevTests(){
+  try {
+    console.assert(typeof Faq === 'function', 'TEST: Faq should be defined');
+    console.assert(typeof ServiceCard === 'function', 'TEST: ServiceCard should be defined');
+    console.assert(typeof Testimonial === 'function', 'TEST: Testimonial should be defined');
+    console.assert(typeof Input === 'function' && typeof Textarea === 'function' && typeof Select === 'function', 'TEST: Form components defined');
+
+    // Smoke-test: components return a truthy element
+    const el1 = Faq({ q: 'Q?', a: 'A.' });
+    const el2 = ServiceCard({ title: 'T', bullets: ['x'], cta: '#' });
+    console.assert(!!el1 && !!el2, 'TEST: Components return elements');
+    
+    // Edge-case: ServiceCard bullets can be empty
+    const el3 = ServiceCard({ title: 'No bullets', bullets: [], cta: '#' });
+    console.assert(!!el3, 'TEST: ServiceCard handles empty bullets');
+  } catch (err) {
+    console.warn('Dev tests skipped or failed:', err);
+  }
+})();
